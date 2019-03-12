@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<%= form_with(model: char, local: true) do |form| %>
+  <% if char.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(char.errors.count, "error") %> prohibited this char from being saved:</h2>
+
+      <ul>
+      <% char.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group backcol">
+  <div class="field">
+    <%= form.hidden_field :nick, value: current_user.nickname, :readonly => true %>
+  </div>
+  <div class="field">
+    <%= form.label t(:Char_l), class: 'colwhite' %>
+    <%= form.text_field :name, class: 'form-control', maxlength: 15, :required=>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label t(:Str_l), class: 'colwhite' %>
+    <%= form.number_field :strength, class: 'form-control', in: 0..100, :required=>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label t(:Per_l), class: 'colwhite' %>
+    <%= form.number_field :perception, class: 'form-control', in: 0..100, :required=>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label t(:End_l), class: 'colwhite' %>
+    <%= form.number_field :endurance, class: 'form-control', in: 0..100, :required=>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label t(:Charis_l), class: 'colwhite' %>
+    <%= form.number_field :charisma, class: 'form-control', in: 0..100, :required=>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label t(:Intel_l), class: 'colwhite' %>
+    <%= form.number_field :intelligence, class: 'form-control', in: 0..100, :required=>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label t(:Ag_l), class: 'colwhite' %>
+    <%= form.number_field :agility, class: 'form-control', in: 0..100, :required=>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label t(:Luck_l), class: 'colwhite' %>
+    <%= form.number_field :luck, class: 'form-control', in: 0..100, :required=>true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t(:Add_bt), class: 'btn btn-outline-light' %>
+  </div>
+  </div>
+<% end %>

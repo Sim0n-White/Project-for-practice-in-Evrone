@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+<nav class="navbar-expand-lg nav navbar navbar-dark bg-dark fixnav">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+    <div class="navbar-nav">
+
+      <a class="nav-item nav-link active" href="<%= root_path %>"><%= t(:Main_p) %></a>
+      <% if signed_in? %>
+        <li class="nav-item sout"><p3> | </p3><p4><%= current_user.nickname %>-</p4></li>
+        <li class="nav-item sout"><%= link_to t(:Sign_l), destroy_user_session_path, method: :delete %></li>
+      <% end %>
+      <% if signed_in? && !current_page?(home_page_input_path)  %>
+        <li class="nav-item linkfix"><p3> | </p3><%= link_to t(:Back_l), request.referrer%></li>
+      <% end %>
+    </div>
+  </div>
+  <div class="topnav-right">
+    <a class="nav-item linkfix"><%= link_to "Русский", locale: :ru, class: "nav-link" %></a>
+    <a class="nav-item linkfix"><%= link_to "English", locale: :en, class: "nav-link" %></a>
+  </div>
+</nav>

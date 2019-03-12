@@ -1,0 +1,20 @@
+<h1 class="fixtitle"><%= t(:Com_chtx) %></h1>
+
+<div id="implicit__container">
+  <%= form_with id: 'implicit__form', method: :get, url: compare_output_path do |form| %>
+    <div class="form-group backcol">
+    <%= form.text_field :name, placeholder: t(:Ask_ch_name), class: 'form-control fff', :required=>true%>
+    <br>
+      <%= form.text_field :nick_co, placeholder: t(:Ask_nick), class: 'form-control fff', :required=>true%>
+      <div class="createspace">
+        <%= form.text_field :name_co, placeholder: t(:Ask_nick_ch), class: 'form-control fff', :required=>true%>
+      </div>
+      <div class="createspace">
+        <%= form.submit t(:Ask_checkbt), class: 'btn btn-outline-light' %>
+      </div>
+    </div>
+  <% end %>
+  <div class="">
+  <p id="implicit__result"></p>
+  </div>
+</div>

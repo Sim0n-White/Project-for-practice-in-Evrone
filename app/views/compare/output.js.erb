@@ -1,0 +1,107 @@
+document.querySelector('#implicit__result').innerHTML =
+    '<% if (@result == nil || @result_co == nil) || (@result.empty? || @result_co.empty?) %>' +
+    '<p class="fixtitle"><font size="4"><%= t(:Wrong_co) %></font></p>' +
+    '<% else %>' +
+    '<table class="table-bordered table-dark fixtitle cotable">' +
+      '<% @result.each do |charr| %>' +
+        '<% @result_co.each do |char| %>' +
+          '<tr>' +
+            '<th><%= t(:Char_l) %></th>' +
+            '<td><%= charr.name %></td>' +
+            '<td><%= char.name %></td>' +
+          '</tr>' +
+          '<tr>' +
+            '<th class = "blackt"><%= t(:Str_l) %></th>' +
+            '<% if charr.strength > char.strength %>' +
+              '<td class ="greent"><%= charr.strength %></td>' +
+              '<td class ="redt"><%= char.strength %></td>' +
+            '<% elsif charr.strength < char.strength %>' +
+              '<td class ="redt"><%= charr.strength %></td>' +
+              '<td class ="greent"><%= char.strength %></td>' +
+            '<% elsif charr.strength == char.strength %>' +
+              '<td class ="yellowt"><%= charr.strength %></td>' +
+              '<td class ="yellowt"><%= char.strength %></td>' +
+            '<% end %>' +
+          '</tr>' +
+          '<tr>' +
+            '<th><%= t(:Per_l) %></th>' +
+            '<% if charr.perception > char.perception %>' +
+              '<td class ="greent"><%= charr.perception %></td>' +
+              '<td class ="redt"><%= char.perception %></td>' +
+            '<% elsif charr.perception < char.perception %>' +
+              '<td class ="redt"><%= charr.perception %></td>' +
+              '<td class ="greent"><%= char.perception %></td>' +
+            '<% elsif charr.perception == char.perception %>' +
+              '<td class ="yellowt"><%= charr.perception %></td>' +
+              '<td class ="yellowt"><%= char.perception %></td>' +
+            '<% end %>' +
+          '</tr>' +
+          '<tr>' +
+            '<th><%= t(:End_l) %></th>' +
+            '<% if charr.endurance > char.endurance %>' +
+              '<td class ="greent"><%= charr.endurance %></td>' +
+              '<td class ="redt"><%= char.endurance %></td>' +
+            '<% elsif charr.endurance < char.endurance %>' +
+              '<td class ="redt"><%= charr.endurance %></td>' +
+              '<td class ="greent"><%= char.endurance %></td>' +
+            '<% elsif charr.endurance == char.endurance %>' +
+              '<td class ="yellowt"><%= charr.endurance %></td>' +
+              '<td class ="yellowt"><%= char.endurance %></td>' +
+            '<% end %>' +
+          '</tr>' +
+          '<tr>' +
+            '<th><%= t(:Charis_l) %></th>' +
+            '<% if charr.charisma > char.charisma %>' +
+              '<td class ="greent"><%= charr.charisma %></td>' +
+              '<td class ="redt"><%= char.charisma %></td>' +
+            '<% elsif charr.charisma < char.charisma %>' +
+              '<td class ="redt"><%= charr.charisma %></td>' +
+              '<td class ="greent"><%= char.charisma %></td>' +
+            '<% elsif charr.charisma == char.charisma %>' +
+              '<td class ="yellowt"><%= charr.charisma %></td>' +
+              '<td class ="yellowt"><%= char.charisma %></td>' +
+            '<% end %>' +
+          '</tr>' +
+          '<tr>'+
+            '<th><%= t(:Intel_l) %></th>' +
+            '<% if charr.intelligence > char.intelligence %>' +
+              '<td class ="greent"><%= charr.intelligence %></td>' +
+              '<td class ="redt"><%= char.intelligence %></td>' +
+            '<% elsif charr.intelligence < char.intelligence %>' +
+              '<td class ="redt"><%= charr.intelligence %></td>' +
+              '<td class ="greent"><%= char.intelligence %></td>' +
+            '<% elsif charr.intelligence == char.intelligence %>' +
+              '<td class ="yellowt"><%= charr.intelligence %></td>' +
+              '<td class ="yellowt"><%= char.intelligence %></td>' +
+            '<% end %>' +
+          '</tr>' +
+          '<tr>' +
+            '<th><%= t(:Ag_l) %></th>' +
+            '<% if charr.agility > char.agility %>' +
+              '<td class ="greent"><%= charr.agility %></td>' +
+              '<td class ="redt"><%= char.agility %></td>' +
+            '<% elsif charr.agility < char.agility %>' +
+              '<td class ="redt"><%= charr.agility %></td>' +
+              '<td class ="greent"><%= char.agility %></td>' +
+            '<% elsif charr.agility == char.agility %>' +
+              '<td class ="yellowt"><%= charr.agility %></td>' +
+              '<td class ="yellowt"><%= char.agility %></td>' +
+            '<% end %>' +
+          '</tr>' +
+          '<tr>' +
+            '<th><%= t(:Luck_l) %></th>' +
+            '<% if charr.luck > char.luck %>' +
+              '<td class ="greent"><%= charr.luck %></td>' +
+              '<td class ="redt"><%= char.luck %></td>' +
+            '<% elsif charr.luck < char.luck %>' +
+              '<td class ="redt"><%= charr.luck %></td>' +
+              '<td class ="greent"><%= char.luck %></td>' +
+            '<% elsif charr.luck == char.luck %>' +
+              '<td class ="yellowt"><%= charr.luck %></td>' +
+              '<td class ="yellowt"><%= char.luck %></td>' +
+            '<% end %>' +
+          '</tr>' +
+        '<% end %>' +
+      '<% end %>' +
+    '</table>' +
+    '<% end %>'

@@ -1,0 +1,39 @@
+<h1 class="fixtitle"><%= t(:My_char) %></h1>
+<% if @chars.empty? %>
+  <p>No data</p>
+  <% else %>
+<table class="table-striped correctplace tablefix table-dark">
+  <thead>
+    <tr>
+      <th><%= t(:Char_l) %></th>
+      <th><%= t(:Str_l) %></th>
+      <th><%= t(:Per_l) %></th>
+      <th><%= t(:End_l) %></th>
+      <th><%= t(:Charis_l) %></th>
+      <th><%= t(:Intel_l) %></th>
+      <th><%= t(:Ag_l) %></th>
+      <th><%= t(:Luck_l) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chars.each do |char| %>
+      <tr>
+        <td><%= char.name %></td>
+        <td><%= char.strength %></td>
+        <td><%= char.perception %></td>
+        <td><%= char.endurance %></td>
+        <td><%= char.charisma %></td>
+        <td><%= char.intelligence %></td>
+        <td><%= char.agility %></td>
+        <td><%= char.luck %></td>
+        <td><%= link_to t(:Show_l), char %></td>
+        <td><%= link_to t(:Edit_l), edit_char_path(char) %></td>
+        <td><%= link_to t(:Destroy_l), char, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+

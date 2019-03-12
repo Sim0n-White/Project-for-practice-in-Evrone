@@ -1,0 +1,15 @@
+<h1 class="fixtitle"><%= t(:Looktx) %></h1>
+
+<div id="implicit__container">
+  <%= form_with id: 'implicit__form', method: :get, url: lookchar_output_path do |form| %>
+    <div class="form-group backcol">
+      <div class="field">
+        <%= form.text_field :nick, placeholder: t(:Look_nick), class: 'form-control', :required=>true%>
+        <div class="actions createspace">
+          <%= form.submit t(:Look_checkbt), class: 'btn btn-outline-light' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    <p id="implicit__result"></p>
+</div>

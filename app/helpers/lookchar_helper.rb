@@ -1,0 +1,2 @@
+module LookcharHelper
+end

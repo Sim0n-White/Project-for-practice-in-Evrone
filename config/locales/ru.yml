@@ -1,0 +1,66 @@
+ru:
+  Char_l: "Имя персонажа"
+  Str_l: "Сила"
+  Per_l: "Восприятие"
+  End_l: "Выносливость"
+  Charis_l: "Харизма"
+  Intel_l: "Интеллект"
+  Ag_l: "Проворство"
+  Luck_l: "Удача"
+  Add_bt: "Создать персонажа"
+  Add_tx: "Создание персонажа"
+  Back_l: "Назад"
+  Sign_l: "Выход"
+  Main_p: "Главная страница"
+  Main_c: "Выберите дальнейшее действие:"
+  Show: "Показать своих персонажей"
+  Add: "Добавить нового персонажа"
+  Compare: "Сравнить персонажей"
+  Show_oth: "Показать персонажей другого игрока"
+  Log_intx: "Вход"
+  Email_tx: "Email"
+  Pass_tx: "Пароль"
+  Rem_tx: "Запомнить"
+  Log_inbt: "Войти"
+  Sign_up: "Зарегистрироваться"
+  Sign_uptx: "Регистрация"
+  Nick_tx: "Никнейм"
+  Pass_tx_up: "Пароль"
+  Pass_conf: "Повторите пароль"
+  Pas_lim: "знаков минимум"
+  My_char: "Мои персонажи"
+  Show_l: "Подробнее"
+  Edit_l: "Изменить"
+  Destroy_l: "Удалить"
+  Char_ls: "Имя"
+  Ask_ch_name: "Введите имя вашего персонажа"
+  Ask_nick: "Введите Никнейм другого игрока"
+  Ask_nick_ch: "Введите имя его персонажа"
+  Ask_checkbt: "Сравнить"
+  Com_chtx: "Сравнение Персонажей"
+  Wrong_co: "Неправильный Никнейм или Имя персонажа"
+  Look_nick: "Введите Никнейм игрока"
+  Look_checkbt: "Посмотреть"
+  Looktx: "Персонажи Игрока"
+  Lookwar: "Игрока с таким Никнеймом не существует"
+  Hellotx: "Пивет"
+  Exist_tx: "У вас уже есть такой персонаж"
+  activerecord:
+    attributes:
+      user:
+        password_confirmation: ""
+        email: ""
+        password: ""
+        nickname: ""
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "Пароль слишком короткий (минимум 6 символов)"
+            nickname:
+              taken: "Такой Никнейм уже существует!"
+            email:
+              taken: "Такой Email уже существует!"
+            password_confirmation:
+              confirmation: "Пароли не совпадают!"
